@@ -1,71 +1,80 @@
-import React from 'react'
+import React from 'react';
 import '../index.scss';
-import pro1 from '../assets/pro1.png'
-import pro2 from '../assets/pro2.png'
-import pro3 from '../assets/pro3.png'
-import {  FaArrowRight } from 'react-icons/fa';
+import pro1 from '../assets/pro1.png';
+import pro2 from '../assets/pro2.png';
+import pro3 from '../assets/pro3.png';
+import { FaArrowRight } from 'react-icons/fa';
 
 const Project = () => {
   return (
-    <div className='  top-[2891px] w-[1440px] h-[643px] bg-gray-100  mx-auto'>
-      <div className='relative top-[80px]  left-[120px] w-[1201px] h-[483px]  gap-[32px]'>
-        <div className='heading w-[1201px] h-[191px]flex gap-[23px]'>
-            <div className='w-[1201px] h-[96px] relative mx-auto gap-[12px]'>
-                <div className='flex about text-regular-normal w-auto  max-w-[176px]  h-auto gap-[16px]'>
-                    <h3>----------</h3>
-                     <h3 className=''>PROJECTS</h3>
-                </div>
-                <div className='w-[1201px] h-[96px] flex gap-[51px]'>
-                    <div className='typography-2 w-[631px]'>
-                        <h1 className=''>Delivering Quality Plumbing Solutions for Homes & Businesses</h1>
-                    </div>
-                    <div className='text-regular-normal w-[571px] ml-29 h-[72px] '>
-                        <p className='font-roboto font-normal text-[16px] leading-[150%] tracking-[0%] text-center'>We take pride in our successful plumbing projects, ensuring durability efficiency, and customer satisfaction. Explore our portfolio of residential and commercial plumbing solutions tailored to every need.</p>
-                    </div>
-                </div>
-                <div className='justify-end flex'>
-   <button className="w-[50px] h-[32px] rounded-[6px] px-[12px] py-[3px] bg-[#FFC107] text-white text-lg flex items-center justify-center">
-   <FaArrowRight size={15} color="white" />
-   </button>
-                </div>
+    <div className='w-full min-h-[643px] bg-gray-100 py-20'>
+      <div className='max-w-7xl mx-auto px-4 lg:px-8'>
+        {/* Header Section */}
+        <div className='mb-16'>
+          <div className='flex items-center gap-4 mb-6'>
+            <span className='w-8 border-t-2 border-current' />
+            <h3 className='text-lg font-semibold uppercase'>PROJECTS</h3>
+            <span className='w-8 border-t-2 border-current' />
+          </div>
 
-
+          <div className='flex flex-col lg:flex-row gap-8 mb-8'>
+            <div className='lg:w-1/2'>
+              <h1 className='text-4xl font-bold text-[#4A4A4A]'>
+                Delivering Quality Plumbing Solutions for Homes & Businesses
+              </h1>
             </div>
+            
+            <div className='lg:w-1/2'>
+              <p className='text-[#AAAAAA] text-base leading-relaxed'>
+                We take pride in our successful plumbing projects, ensuring durability efficiency, and customer satisfaction. Explore our portfolio of residential and commercial plumbing solutions tailored to every need.
+              </p>
+            </div>
+          </div>
+
+          <div className='flex justify-end'>
+            <button className="w-[50px] h-[32px] rounded-[6px] px-[12px] py-[3px] bg-[#FFC107] flex items-center justify-center">
+              <FaArrowRight size={15} className="text-white" />
+            </button>
+          </div>
         </div>
-        <div className='project w-[1201px] h-[260px] mt-[100px] flex gap-[85px]  '>
-        <div class="w-[198px] h-[185px] gap-[15px] mt-10 ml-10 text-[#AAAAAA] flex flex-col">
-  <p class="text-center">Residential Plumbing</p>
-  <p class="text-center">Commercial Plumbing</p>
-  <p class="text-center">Industrial Plumbing</p>
-  <p class="text-center">Multi-Unit Housing</p>
-</div>
 
-            <div className='w-[918px] your-class-col   your-class-name h-[260px] gap-[24px] flex '>
-            <div className="relative w-full  h-full">
-    <img src={pro1} alt="Image 1" className="w-full h-full object-cover" />
-    <div className='w-[112px] h-[44px] top-[204px] left-[12px] absolute'>
-    <p className="absolute left-0 bottom-0 text-white  bg-opacity-50 ">Luxury Home Leak Repairs</p>
-    </div>
-    
-    </div>
-    <div className="relative w-full h-full">
-    <img src={pro2} alt="Image 1" className="w-full h-full object-cover" />
-    <div className='absolute left-0 bottom-0 text-white  bg-opacity-50'>
-    <p className="absolute left-0 bottom-0 text-white  bg-opacity-50 p-2">Bathroom & Kitchen Renovation</p>
-    </div>
-    </div>
-    <div className="relative w-full h-full">
-    <img src={pro3} alt="Image 1" className="w-full h-full object-cover" />
-    <div className='absolute left-0 bottom-0 text-white  p-2 bg-opacity-50 '>
-    <p >Smart Water Heater Installation</p>
-    </div>
-    
-    </div>
+        {/* Project Gallery - Preserving LG Layout */}
+        <div className='flex flex-col lg:flex-row gap-8'>
+          {/* Category List (Hidden on mobile) */}
+          <div className='hidden lg:block w-[198px] space-y-4 text-[#AAAAAA] text-center'>
+            <p>Residential Plumbing</p>
+            <p>Commercial Plumbing</p>
+            <p>Industrial Plumbing</p>
+            <p>Multi-Unit Housing</p>
+          </div>
+
+          {/* Image Grid */}
+          <div className='flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8'>
+            <div className='relative group'>
+              <img src={pro1} alt="Luxury Home Leak Repairs" className='w-full h-64 object-cover' />
+              <div className='absolute bottom-0 left-0 p-4'>
+                <p className='text-white text-sm lg:text-base'>Luxury Home Leak Repairs</p>
+              </div>
             </div>
+
+            <div className='relative group'>
+              <img src={pro2} alt="Bathroom & Kitchen Renovation" className='w-full h-64 object-cover' />
+              <div className='absolute bottom-0 left-0 p-4'>
+                <p className='text-white text-sm lg:text-base'>Bathroom & Kitchen Renovation</p>
+              </div>
+            </div>
+
+            <div className='relative group'>
+              <img src={pro3} alt="Smart Water Heater Installation" className='w-full h-64 object-cover' />
+              <div className='absolute bottom-0 left-0 p-4'>
+                <p className='text-white text-sm lg:text-base'>Smart Water Heater Installation</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;

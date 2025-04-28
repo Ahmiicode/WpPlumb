@@ -9,109 +9,68 @@ import '../index.scss';
 
 const Services = () => {
   return (
-    <div className="w-full py-20 bg-white flex justify-center">
-      <div className="w-[1212px]">
+    <div className="w-full py-12 md:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className='justify-center flex'>
-          <div className='header w-[631px] h-[172px] flex flex-col  gap-[12px] justify-center items-center'>
-            <div className='flex justify-center items-center text-regular-normal'>
-              <h1>---------</h1>
-              <h1 className="text-center font-roboto font-bold text-[20px] leading-[140%] tracking-[0%]">Service</h1>
-              <h1>---------</h1>
+        <div className='text-center mb-12'>
+          <div className='max-w-2xl mx-auto space-y-4'>
+            <div className='flex items-center justify-center gap-2 text-gray-400'>
+              <div className='w-8 border-t-2 border-gray-300' />
+              <h1 className="font-bold text-lg uppercase tracking-widest">Service</h1>
+              <div className='w-8 border-t-2 border-gray-300' />
             </div>
-            <div className='typography'>
-              <h2 className='font-roboto font-bold text-[#4A4A4A] text-[40px] leading-[120%] tracking-[0%] text-center'>
-                Comprehensive Plumbing Services for Your Home & Business
-              </h2>
-            </div>   
-            <div>
-              <p className='text-[#AAAAAA] font-roboto font-normal text-[16px] leading-[150%] tracking-[0%] text-center'>
-                We offer a full range of plumbing solutions tailored to your needs
-              </p>
-            </div>
+            <h2 className='text-3xl md:text-4xl font-bold text-gray-800'>
+              Comprehensive Plumbing Services for Your Home & Business
+            </h2>   
+            <p className='text-gray-500 md:text-lg max-w-xl mx-auto'>
+              We offer a full range of plumbing solutions tailored to your needs
+            </p>
           </div>
         </div>
-
 
         {/* Services Grid */}
-         {/* Top row: Box1 (476), Box2 (348), Box3 (476) */}
-      <div className="flex paragraph-text service-h gap-[8px] mt-[32px] mb-[8px]">
-        {/* Box 1 */}
-        <div className="w-[492px] h-[336px] rounded-[10px] border border-[#EEEEEE] p-[9px] flex flex-col">
-          <img src={img1} alt="" className="w-full h-[200px] rounded-[10px] mb-2"/>
-          <div className="flex justify-between items-center flex-1">
-            <div>
-              <h3 >Leak Detection & Repair</h3>
-              <p >
-              Quickly identifying and fixing leaks to prevent water damage and high utility bills
-              </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            { img: img1, title: 'Leak Detection & Repair', 
+              text: 'Quickly identifying and fixing leaks to prevent water damage and high utility bills', 
+              button: true },
+            { img: img2, title: 'Water Heater Installation', 
+              text: 'Professional installation and repair of tank and tankless water heaters for a steady hot water supply.' },
+            { img: img3, title: 'Drain Cleaning & Unclogging', 
+              text: 'Efficient removal of clogs and blockages to ensure smooth water flow in sinks, showers, and pipes.' },
+            { img: img4, title: 'Toilet & Sink Repair', 
+              text: 'Fixing leaks, clogs, and malfunctioning toilets or sinks to maintain optimal functionality' },
+            { img: img5, title: 'Emergency Plumbing Services', 
+              text: 'Efficient removal of clogs and blockages to ensure smooth water flow in sinks, showers, and pipes.' },
+            { img: img6, title: 'Pipe Replacement & Repiping', 
+              text: 'Upgrading old or damaged pipes to improve water quality and prevent future leaks', 
+              button: true },
+          ].map((service, index) => (
+            <div 
+              key={index}
+              className="group relative rounded-xl border border-gray-200 hover:border-blue-100 transition-all hover:shadow-lg overflow-hidden"
+            >
+              <img 
+                src={service.img} 
+                alt="" 
+                className="w-full h-48 md:h-56 object-cover"
+              />
+              <div className="p-4 md:p-6 space-y-4">
+                <h3 className="text-xl font-semibold text-gray-800">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm md:text-base">
+                  {service.text}
+                </p>
+                {service.button && (
+                  <button className="button-yellow mt-2 px-6 py-2 text-sm md:text-base">
+                    Book Now
+                  </button>
+                )}
+              </div>
             </div>
-            <div className='button'>
-            <button className="w-[121px] h-[40px]  ">
-              Book Now
-            </button>
-            </div>
-            
-          </div>
+          ))}
         </div>
-
-        {/* Box 2 */}
-        <div className="w-[348px] h-[336px] rounded-[10px] border border-[#EEEEEE] p-[9px] flex flex-col">
-          <img src={img2} alt="" className="w-full h-[200px] rounded-[10px] mb-2"/>
-          <h3 >Water Heater Installation</h3>
-          <p >
-          Professional installation and repair of tank and tankless water heaters for a steady hot water supply.
-          </p>
-        </div>
-
-        {/* Box 3 */}
-        <div className="w-[348px] h-[336px] rounded-[10px] border border-[#EEEEEE] p-[9px] flex flex-col">
-          <img src={img3} alt="" className="w-full h-[200px] rounded-[10px] mb-2"/>
-          <h3 >Drain Cleaning & Unclogging</h3>
-          <p >
-          Efficient removal of clogs and blockages to ensure smooth water flow in sinks, showers, and pipes.
-          </p>
-        </div>
-      </div>
-
-      {/* Bottom row: Box4 (348), Box5 (348), Box6 (476) */}
-      <div className="flex paragraph-text service-h gap-[8px]">
-        {/* Box 4 */}
-        <div className="w-[348px] h-[336px] rounded-[10px] border border-[#EEEEEE] p-[9px]">
-          <img src={img4} alt="" className="w-full h-[200px] rounded-[10px] mb-2"/>
-          <h3 >Toilet & Sink Repair</h3>
-          <p >
-          Fixing leaks, clogs, and malfunctioning toilets or sinks to maintain optimal functionality
-          </p>
-        </div>
-
-        {/* Box 5 */}
-        <div className="w-[348px] h-[336px] rounded-[10px] border border-[#EEEEEE] p-[9px]">
-          <img src={img5} alt="" className="w-full h-[200px] rounded-[10px] mb-2"/>
-          <h3 >Emergency Plumbing Serv..</h3>
-          <p >
-          Efficient removal of clogs and blockages to ensure smooth water flow in sinks, showers, and pipes.
-          </p>
-        </div>
-
-        {/* Box 6 */}
-        <div className="w-[492px] h-[336px] rounded-[10px] border border-[#EEEEEE] p-[9px] flex flex-col">
-          <img src={img6} alt="" className="w-full h-[200px] rounded-[10px] mb-2"/>
-          <div className="flex justify-between items-center flex-1">
-            <div>
-              <h3 >Pipe Replacement & Repiping</h3>
-              <p >
-              Upgrading old or damaged pipes to improve water quality and prevent future leaks
-              </p>
-            </div>
-            <div className='button'>
-            <button className="w-[121px] h-[40px]  ">
-              Book Now
-            </button>
-            </div>
-          </div>
-        </div>
-      </div>
       </div>
     </div>
   );
