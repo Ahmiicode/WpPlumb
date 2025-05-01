@@ -1,29 +1,30 @@
 import React from 'react'
-import Topheader from './components/Topheader'
-import Herosection from './components/Herosection'
-import Aboutus from './components/Aboutus'
-import Services from './components/Services'
-import Project from './components/Project'
-import Emergncy from './components/Emergncy'
-import Testimonials from './components/Testimonials'
-import Pricing from './components/Pricing'
-import Crc from './components/Crc'
+import {  Route,Routes } from 'react-router-dom'
+import Home from './pages/Home'
 import Footer from './components/Footer'
+import Topheader from './components/Topheader'
+import Booknow from './pages/Booknow'
+import Contactus from './pages/Contactus'
+import Crc from './components/Crc'
+
 
 
 const App = () => {
   return (
-    <div >
-     <Topheader/>
-     <Herosection/>
-     <Aboutus/>
-     <Services/>
-     <Project/>
-     <Emergncy/>
-     <Testimonials/>
-     <Pricing/>
-     <Crc/>
-     <Footer/>
+    <div className=''>
+      <div className=''>
+      <Topheader/>
+      </div>
+   
+   
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/booknow" element={<Booknow />} />
+        <Route path="/contactus" element={<Contactus/>} />
+      
+      </Routes>
+      <Crc/>
+      <Footer/>
      
     </div>
   )

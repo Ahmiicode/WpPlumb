@@ -3,12 +3,14 @@ import { BiPhoneCall } from 'react-icons/bi';
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import logo from '../assets/Logo Background.png';
 import '../index.scss';
+import { Link,NavLink } from 'react-router-dom';
 
-const HeaderAndNavbar = () => {
+
+const Topheader = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full  sticky top-0  mx-auto">
       {/* Top Header Section */}
       <div className="w-full bg-white py-3 px-4 md:px-8 lg:px-10">
         <div className="max-w-[1200px] mx-auto flex flex-row md:flex-row items-center justify-between gap-3 md:gap-0">
@@ -62,28 +64,63 @@ const HeaderAndNavbar = () => {
                 alt="WP-PLUMB Logo" 
                 className="w-9 h-9 md:w-10 md:h-10"
               />
+              <NavLink to='/'>
               <h1 className="text-xl md:text-2xl font-bold whitespace-nowrap">
                 WP-PLUMB
               </h1>
+              </NavLink>
+             
             </div>
 
-            {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
-              {['Home', 'About us', 'Service', 'Project', 'Contact'].map((item) => (
-                <a 
-                  key={item} 
-                  href="/" 
-                  className="text-gray-700 hover:text-blue-600 transition-colors"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
+      <NavLink
+        to="/"
+        className="text-gray-700 hover:text-blue-600 transition-colors"
+        activeClassName="text-blue-600"
+      >
+        Home
+      </NavLink>
+      
+      <NavLink
+        to="/"
+        className="text-gray-700 hover:text-blue-600 transition-colors"
+        activeClassName="text-blue-600"
+      >
+        About Us
+      </NavLink>
+      
+      <NavLink
+        to="/"
+        className="text-gray-700 hover:text-blue-600 transition-colors"
+        activeClassName="text-blue-600"
+      >
+        Service
+      </NavLink>
+      
+      <NavLink
+        to="/"
+        className="text-gray-700 hover:text-blue-600 transition-colors"
+        activeClassName="text-blue-600"
+      >
+        Project
+      </NavLink>
+      
+      <NavLink
+        to="/contactus"
+        className="text-gray-700 hover:text-blue-600 transition-colors"
+        activeClassName="text-blue-600"
+      >
+        Contact
+      </NavLink>
+    </div>
 
             {/* Desktop Button */}
+            <Link to='/booknow'>
             <button className="button-yellow hidden lg:block px-6 py-2">
               Book Now
             </button>
+            </Link>
+          
 
             {/* Mobile Menu Button */}
             <button 
@@ -109,13 +146,16 @@ const HeaderAndNavbar = () => {
               {item}
             </a>
           ))}
+          <Link to='/booknow'>
           <button className="button-yellow mt-2 px-6 py-2">
             Book Now
           </button>
+          </Link>
+       
         </div>
       </div>
     </div>
   );
 };
 
-export default HeaderAndNavbar;
+export default Topheader;

@@ -3,6 +3,7 @@ import heroImage from '../assets/image.png';
 import boxImage from '../assets/box.png';
 import { FaTools, FaClock, FaThumbsUp, FaPhoneAlt } from 'react-icons/fa';
 import '../index.scss';
+import { Link } from 'react-router-dom';
 
 const Herosection = () => {
   return (
@@ -24,12 +25,17 @@ const Herosection = () => {
               Providing top-notch plumbing and home services for all your needs – anytime, anywhere.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <Link to='/booknow' >
               <button className="button-yellow px-8 py-3 text-lg w-full sm:w-auto">
                 Book Now
               </button>
+              </Link>
+              <Link to='/contactus'>
               <button className="bg-white text font-semibold px-8 py-3 rounded-lg w-full sm:w-auto">
                 Contact us
               </button>
+              </Link>
+            
             </div>
           </div>
         </div>

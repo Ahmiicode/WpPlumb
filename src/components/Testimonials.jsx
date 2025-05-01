@@ -8,7 +8,7 @@ import card3 from '../assets/card3.png';
 const Testimonials = () => {
   return (
     <div className='w-full min-h-[593px] bg-gray-100 py-20'>
-      <div className='container mx-auto px-4 lg:px-0'>
+      <div className='container max-w-[1200px] mx-auto px-4 lg:px-0'>
         {/* Header Section */}
         <div className='flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 lg:mb-12'>
           <div className='mb-6 lg:mb-0'>

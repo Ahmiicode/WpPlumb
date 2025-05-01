@@ -89,13 +89,13 @@ const Footer = () => {
 
             <div className='mt-6'>
               <div className='flex gap-4'>
-                <a href="#" className='p-2 text bg-white rounded-full hover:bg-[#FFC107] transition-colors'>
+                <a href="#" className='p-2 text bg-white rounded-full  transition-colors'>
                   <FaFacebookF className='w-5 h-5' />
                 </a>
-                <a href="#" className='p-2 text bg-white rounded-full hover:bg-[#FFC107] transition-colors'>
+                <a href="#" className='p-2 text bg-white rounded-full  transition-colors'>
                   <FaInstagram className='w-5 h-5' />
                 </a>
-                <a href="#" className='p-2 text bg-white rounded-full hover:bg-[#FFC107] transition-colors'>
+                <a href="#" className='p-2 text bg-white rounded-full  transition-colors'>
                   <FaLinkedinIn className='w-5 h-5' />
                 </a>
               </div>
